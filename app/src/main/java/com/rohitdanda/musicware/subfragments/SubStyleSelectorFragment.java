@@ -142,6 +142,11 @@ public class SubStyleSelectorFragment extends Fragment {
                 return 2;
             case Constants.TIMBER4:
                 return 3;
+            case Constants.TIMBER5 :
+                return 4;
+            case Constants.TIMBER6 :
+                return 5;
+
             default:
                 return 2;
         }

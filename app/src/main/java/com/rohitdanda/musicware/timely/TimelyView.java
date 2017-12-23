@@ -141,6 +141,7 @@ public class TimelyView extends View {
         mPaint.setColor(textColor);
         mPaint.setStrokeWidth(5.0f);
         mPaint.setStyle(Paint.Style.STROKE);
+
         mPath = new Path();
     }
 }
