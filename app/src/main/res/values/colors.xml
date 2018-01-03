@@ -4,15 +4,15 @@
     <color name="window_background">#FFF5F5F5</color>
     <color name="window_background_dark">#212121</color>
     <color name="window_background_black">#000000</color>
-    <color name="bt_accent">#00B8D4</color>
+    <color name="bt_accent">#DD3333</color>
 
     <color name="colorPrimary">#673AB7</color>
     <color name="colorPrimaryDark">#512DA8</color>
-    <color name="colorAccent">#EE7600</color>
+    <color name="colorAccent">#DD3333</color>
 
     <color name="colorPrimaryDarkTheme">#4a4959</color>
     <color name="colorPrimaryDarkDarkTheme">#525065</color>
-    <color name="colorAccentDarkTheme">#ffb701</color>
+    <color name="colorAccentDarkTheme">#DD3333</color>
 
     <color name="colorPrimaryBlack">#000000</color>
     <color name="colorPrimaryDarkBlack">#000000</color>
@@ -32,9 +32,9 @@
     <color name="progressBackgroundColorDark">#33ffffff</color>
 
     <color name="colorPrimaryLightDefault">#FAFAFA</color>
-    <color name="colorAccentLightDefault">#EE7600</color>
+    <color name="colorAccentLightDefault">#DD3333</color>
 
-    <color name="colorPrimaryDarkDefault">#37474F</color>
-    <color name="colorAccentDarkDefault">#2196F3</color>
+    <color name="colorPrimaryDarkDefault">#DD3333</color>
+    <color name="colorAccentDarkDefault">#DD3333</color>
 
 </resources>

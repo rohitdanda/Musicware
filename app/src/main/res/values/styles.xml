@@ -13,7 +13,7 @@
     <style name="ThemeBaseLight" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#FFA500</item>
+        <item name="colorAccent">#DD3333</item>
         <item name="android:windowBackground">@color/window_background</item>
         <item name="cardStyle">@style/CardViewStyle.Light</item>
         <item name="accentColor">@color/colorAccent</item>

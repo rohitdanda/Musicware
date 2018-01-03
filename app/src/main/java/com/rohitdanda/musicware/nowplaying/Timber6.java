@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,57 +40,33 @@ public class Timber6 extends BaseNowplayingFragment {
         ((SeekBar) rootView.findViewById(R.id.song_progress)).getProgressDrawable().setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY));
         ((SeekBar) rootView.findViewById(R.id.song_progress)).getThumb().setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP));
 
-        nextSong = (TextView) rootView.findViewById(R.id.title_next);
-        nextArt = (CircleImageView) rootView.findViewById(R.id.album_art_next);
-
-        nextSong1= (TextView) rootView.findViewById(R.id.title_next1);
-        nextArt1 = (CircleImageView) rootView.findViewById(R.id.album_art_next1);
-
-
-
-        rootView.findViewById(R.id.nextView).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MusicPlayer.setQueuePosition(MusicPlayer.getQueuePosition() + 1);
-            }
-        });
-
-
-
-        rootView.findViewById(R.id.nextView1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MusicPlayer.setQueuePosition(MusicPlayer.getQueuePosition() + 2);
-            }
-        });
-
 
 
         return rootView;
     }
 
-    @Override
-    public void updateShuffleState() {
-        if (shuffle != null && getActivity() != null) {
-            MaterialDrawableBuilder builder = MaterialDrawableBuilder.with(getActivity())
-                    .setIcon(MaterialDrawableBuilder.IconValue.SHUFFLE)
-                    .setSizeDp(30);
-
-            if (MusicPlayer.getShuffleMode() == 0) {
-                builder.setColor(Color.WHITE);
-            } else builder.setColor(accentColor);
-
-            shuffle.setImageDrawable(builder.build());
-            shuffle.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    MusicPlayer.cycleShuffle();
-                    updateShuffleState();
-                    updateRepeatState();
-                }
-            });
-        }
-    }
+//    @Override
+//    public void updateShuffleState() {
+//        if (shuffle != null && getActivity() != null) {
+//            MaterialDrawableBuilder builder = MaterialDrawableBuilder.with(getActivity())
+//                    .setIcon(MaterialDrawableBuilder.IconValue.SHUFFLE)
+//                    .setSizeDp(30);
+//
+//            if (MusicPlayer.getShuffleMode() == 0) {
+//                builder.setColor(Color.WHITE);
+//            } else builder.setColor(accentColor);
+//
+//            shuffle.setImageDrawable(builder.build());
+//            shuffle.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    MusicPlayer.cycleShuffle();
+//                    updateShuffleState();
+//                    updateRepeatState();
+//                }
+//            });
+//        }
+//    }
 
     @Override
     public void updateRepeatState() {
@@ -130,8 +107,36 @@ public class Timber6 extends BaseNowplayingFragment {
         if (getActivity() != null) {
             long nextId = MusicPlayer.getNextAudioId();
             Song next = SongLoader.getSongForID(getActivity(), nextId);
-            nextSong.setText(next.title);
-            nextArt.setImageURI(TimberUtils.getAlbumArtUri(next.albumId));
+//            nextSong.setText(next.title);
+  //          nextArt.setImageURI(TimberUtils.getAlbumArtUri(next.albumId));
+        }
+    }
+
+    @Override
+    public void updateShuffleState() {
+        if (shuffle != null && getActivity() != null) {
+            MaterialDrawableBuilder builder = MaterialDrawableBuilder.with(getActivity())
+                    .setIcon(MaterialDrawableBuilder.IconValue.SHUFFLE)
+                    .setSizeDp(30);
+
+            builder.setColor(TimberUtils.getBlackWhiteColor(accentColor));
+
+            shuffle.setImageDrawable(builder.build());
+            shuffle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            MusicPlayer.setShuffleMode(MusicService.SHUFFLE_NORMAL);
+                            MusicPlayer.next();
+                            recyclerView.scrollToPosition(MusicPlayer.getQueuePosition());
+                        }
+                    }, 150);
+
+                }
+            });
         }
     }
 }

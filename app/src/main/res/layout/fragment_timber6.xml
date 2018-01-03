@@ -15,21 +15,23 @@
         <FrameLayout
             android:id="@+id/headerView"
             android:layout_width="match_parent"
-            app:layout_heightPercent="65%">
+            app:layout_heightPercent="55%">
 
             <ImageView
                 android:id="@+id/album_art"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop" />
+        </FrameLayout>
 
             <android.support.percent.PercentRelativeLayout
+                android:layout_above="@id/detailView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true"
                     android:layout_gravity="bottom"
                     android:background="#55000000"
                     app:layout_heightPercent="20%">
@@ -82,47 +84,34 @@
                                 android:textSize="13sp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:orientation="horizontal">
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:orientation="horizontal">-->
 
-                            <ImageView
-                                android:id="@+id/shuffle"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:layout_marginRight="10dp"
-                                android:scaleType="center" />
+                            <!--<ImageView-->
+                                <!--android:id="@+id/shuffle"-->
+                                <!--android:layout_width="30dp"-->
+                                <!--android:layout_height="30dp"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:layout_marginRight="10dp"-->
+                                <!--android:scaleType="center" />-->
 
-                            <ImageView
-                                android:id="@+id/repeat"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:background="?attr/selectableItemBackgroundBorderless"
-                                android:layout_marginLeft="10dp"
-                                android:scaleType="center" />
-                        </LinearLayout>
+                            <!--<ImageView-->
+                                <!--android:id="@+id/repeat"-->
+                                <!--android:layout_width="30dp"-->
+                                <!--android:layout_height="30dp"-->
+                                <!--android:background="?attr/selectableItemBackgroundBorderless"-->
+                                <!--android:layout_marginLeft="10dp"-->
+                                <!--android:scaleType="center" />-->
+                        <!--</LinearLayout>-->
                     </RelativeLayout>
                 </FrameLayout>
 
 
             </android.support.percent.PercentRelativeLayout>
-
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_gravity="top"
-                android:layout_marginTop="@dimen/appBarTopMargin"
-                android:background="@android:color/transparent"
-                android:theme="@style/Theme.AppCompat"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        </FrameLayout>
 
         <LinearLayout
             android:id="@+id/detailView"
@@ -134,7 +123,7 @@
             android:orientation="vertical"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            app:layout_heightPercent="20%">
+            app:layout_heightPercent="15%">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -198,10 +187,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:maxHeight="2dp"
-                android:paddingTop="10dp"
+                android:paddingTop="5dp"
                 android:progress="30"
                 android:tag="tint_accent_color"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:id="@+id/song_album"
@@ -235,125 +224,36 @@
 
         </LinearLayout>
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/nextView"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/detailView"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:background="?attr/selectableItemBackground">
 
-            <com.rohitdanda.musicware.widgets.CircleImageView
-                android:id="@+id/album_art_next"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_alignParentLeft="true"
-                android:scaleType="centerCrop"
-                android:layout_centerVertical="true"
-                android:background="#11000000" />
-
-            <LinearLayout
-                android:id="@+id/content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/album_art_next"
-                android:orientation="vertical"
-                android:layout_centerVertical="true">
-
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="42dp"
-                    android:ellipsize="end"
-                    android:fontFamily="sans-serif-light"
-                    android:maxLines="1"
-                    android:text="Next Song"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:id="@+id/title_next"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:ellipsize="end"
-                    android:fontFamily="sans-serif-light"
-                    android:maxLength="20"
-                    android:maxLines="1"
-                    android:text="Demons"
-                    android:textColor="@android:color/white"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/nextView1"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/nextView"
-
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:orientation="horizontal"
-            android:layout_alignParentBottom="true"
-            android:layout_alignRight="@id/nextView"
-
-            android:background="?attr/selectableItemBackground">
-
-            <com.rohitdanda.musicware.widgets.CircleImageView
-                android:id="@+id/album_art_next1"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
-                android:layout_alignParentLeft="true"
-                android:scaleType="centerCrop"
-                android:layout_centerVertical="true"
-                android:background="#11000000" />
-
-            <LinearLayout
-                android:id="@+id/content1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/album_art_next1"
-                android:orientation="vertical"
-                android:layout_centerVertical="true">
-
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="42dp"
-                    android:ellipsize="end"
-                    android:fontFamily="sans-serif-light"
-                    android:maxLines="1"
-                    android:text="Next Song"
-                    android:textColor="@android:color/white"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:id="@+id/title_next1"
-                    style="@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
-                    android:ellipsize="end"
-                    android:fontFamily="sans-serif-light"
-                    android:maxLength="20"
-                    android:maxLines="1"
-                    android:text="Demons"
-                    android:textColor="@android:color/white"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/queue_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/detailView"
+            android:clipToPadding="false"
+            android:paddingTop="18dp" />
 
     </android.support.percent.PercentRelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/shuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        app:layout_anchor="@id/headerView"
+        app:layout_anchorGravity="bottom|right|end" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        app:layout_anchor="@id/headerView"
+        app:layout_anchorGravity="bottom|left|end" />
 
 
 </android.support.design.widget.CoordinatorLayout>
