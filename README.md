@@ -10,3 +10,14 @@ Learning Android Was Fun but Learn Android and Making implementation in an App w
 <img src="https://raw.githubusercontent.com/rohitdanda/musicware/master/screenshot/Capture%2B_2018-01-11-12-57-30.png?token=AJrMkveJfSQSCWJ12wkVgaA6EjXEzmVmks5aYPx6wA%3D%3D" width="280" height="480">
 <img src="https://raw.githubusercontent.com/rohitdanda/musicware/master/screenshot/Capture%2B_2018-01-11-12-57-43.png?token=AJrMkhxzWBaxwZSV3h27D5G69Rt3YbTmks5aYPzZwA%3D%3D" width="280" height="480">
 
+## Credits
+
+->[Timber](https://github.com/naman14/Timber)
+
+->[MultiViewPager](https://github.com/Pixplicity/MultiViewPager)
+
+->[PlayPauseButton](https://github.com/recruit-lifestyle/PlayPauseButton)
+
+->[CircularSeekBar](https://github.com/devadvance/circularseekbar)
+
+->[Nammu](https://github.com/tajchert/Nammu)
