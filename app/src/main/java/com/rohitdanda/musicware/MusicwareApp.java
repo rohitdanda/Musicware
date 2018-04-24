@@ -22,12 +22,12 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.utils.L;
 
-public class TimberApp extends Application {
+public class MusicwareApp extends Application {
 
 
-    private static TimberApp mInstance;
+    private static MusicwareApp mInstance;
 
-    public static synchronized TimberApp getInstance() {
+    public static synchronized MusicwareApp getInstance() {
         return mInstance;
     }
 
@@ -47,7 +47,7 @@ public class TimberApp extends Application {
                     .activityTheme(R.style.AppThemeLight)
                     .primaryColorRes(R.color.colorPrimaryLightDefault)
                     .accentColorRes(R.color.colorAccentLightDefault)
-                    .coloredNavigationBar(false)
+                    .coloredNavigationBar(true)
                     .usingMaterialDialogs(true)
                     .commit();
         }
