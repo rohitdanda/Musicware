@@ -173,7 +173,7 @@ public class MainActivity extends BaseActivity implements ATEActivityThemeCustom
                 setupDrawerContent(navigationView);
                 setupNavigationIcons(navigationView);
             }
-        }, 700);
+        }, 500);
 
 
         if (TimberUtils.isMarshmallow()) {
