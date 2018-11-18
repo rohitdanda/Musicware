@@ -282,7 +282,7 @@ public class MainActivity extends BaseActivity implements ATEActivityThemeCustom
             navigationView.getMenu().findItem(R.id.nav_playlists).setIcon(R.drawable.playlist_play);
             navigationView.getMenu().findItem(R.id.nav_queue).setIcon(R.drawable.music_note);
             navigationView.getMenu().findItem(R.id.nav_nowplaying).setIcon(R.drawable.bookmark_music);
-            //navigationView.getMenu().findItem(R.id.nav_settings).setIcon(R.drawable.settings);
+            navigationView.getMenu().findItem(R.id.nav_settings).setIcon(R.drawable.settings);
             navigationView.getMenu().findItem(R.id.nav_help).setIcon(R.drawable.help_circle);
             navigationView.getMenu().findItem(R.id.nav_about).setIcon(R.drawable.information);
         } else {
@@ -291,7 +291,7 @@ public class MainActivity extends BaseActivity implements ATEActivityThemeCustom
             navigationView.getMenu().findItem(R.id.nav_queue).setIcon(R.drawable.music_note_white);
             navigationView.getMenu().findItem(R.id.nav_nowplaying).setIcon(R.drawable.bookmark_music_white);
            //furture update
-            // navigationView.getMenu().findItem(R.id.nav_settings).setIcon(R.drawable.settings_white);
+            navigationView.getMenu().findItem(R.id.nav_settings).setIcon(R.drawable.settings_white);
             navigationView.getMenu().findItem(R.id.nav_help).setIcon(R.drawable.help_circle_white);
             navigationView.getMenu().findItem(R.id.nav_about).setIcon(R.drawable.information_white);
         }
@@ -317,9 +317,9 @@ public class MainActivity extends BaseActivity implements ATEActivityThemeCustom
                 runnable = navigateQueue;
 
                 break;
-//            case R.id.nav_settings:
-//                NavigationUtils.navigateToSettings(MainActivity.this);
-//                break;
+            case R.id.nav_settings:
+                NavigationUtils.navigateToSettings(MainActivity.this);
+                break;
             case R.id.nav_help:
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 Uri data = Uri.parse("mailto:rohitdanda@gmail.com");
