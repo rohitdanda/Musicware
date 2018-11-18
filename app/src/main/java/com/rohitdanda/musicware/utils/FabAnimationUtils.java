@@ -58,7 +58,7 @@ public class FabAnimationUtils {
                         }
                     }).start();
         } else {
-            Animation anim = AnimationUtils.loadAnimation(fab.getContext(), R.anim.design_fab_out);
+            Animation anim = AnimationUtils.loadAnimation(fab.getContext(), R.anim.activity_fade_out);
             anim.setDuration(duration);
             anim.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
             anim.setAnimationListener(new Animation.AnimationListener() {
@@ -110,7 +110,7 @@ public class FabAnimationUtils {
                         }
                     }).start();
         } else {
-            Animation anim = AnimationUtils.loadAnimation(fab.getContext(), R.anim.design_fab_out);
+            Animation anim = AnimationUtils.loadAnimation(fab.getContext(), R.anim.activity_fade_out);
             anim.setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR);
             anim.setDuration(duration);
             anim.setAnimationListener(new Animation.AnimationListener() {

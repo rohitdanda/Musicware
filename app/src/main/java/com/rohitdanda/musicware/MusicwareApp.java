@@ -47,7 +47,7 @@ public class MusicwareApp extends Application {
                     .activityTheme(R.style.AppThemeLight)
                     .primaryColorRes(R.color.colorPrimaryLightDefault)
                     .accentColorRes(R.color.colorAccentLightDefault)
-                    .coloredNavigationBar(true)
+                    .coloredNavigationBar(false)
                     .usingMaterialDialogs(true)
                     .commit();
         }

@@ -119,7 +119,7 @@ public class Timber6 extends BaseNowplayingFragment {
                     .setIcon(MaterialDrawableBuilder.IconValue.SHUFFLE)
                     .setSizeDp(30);
 
-            builder.setColor(TimberUtils.getBlackWhiteColor(accentColor));
+            builder.setColor(TimberUtils.getBlackWhiteColor(Color.BLACK));
 
             shuffle.setImageDrawable(builder.build());
             shuffle.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +131,9 @@ public class Timber6 extends BaseNowplayingFragment {
                         public void run() {
                             MusicPlayer.setShuffleMode(MusicService.SHUFFLE_NORMAL);
                             MusicPlayer.next();
+                            if(MusicPlayer.getQueuePosition()<=0){
+                                MusicPlayer.getQueueItemAtPosition(0);
+                            }
                             recyclerView.scrollToPosition(MusicPlayer.getQueuePosition());
                         }
                     }, 150);

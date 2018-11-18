@@ -31,7 +31,7 @@ public class ATEUtils {
                     window.setStatusBarColor(getStatusBarColor(color));
                 else window.setStatusBarColor(Color.BLACK);
                 if (Config.coloredNavigationBar(activity, key))
-                    window.setNavigationBarColor(color);
+                    window.setNavigationBarColor(Color.BLACK);
                 else window.setNavigationBarColor(Color.BLACK);
                 applyTaskDescription(activity, key, color);
             }
